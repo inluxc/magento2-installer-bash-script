@@ -825,7 +825,7 @@ function setFilesystemPermission()
     #find ./var ./pub/static ./pub/media ./app/etc -type f -exec chmod g+w {} \;
     #find ./var ./pub/static ./pub/media ./app/etc -type d -exec chmod g+ws {} \;
 
-    chmod -R 777 ./var ./pub/static ./pub/media ./app/etc || _die "Unable to execute writable permission on files (./var ./pub/static ./pub/media ./app/etc)."
+    chmod -R 777 ./var ./pub/static ./pub/media ./app/etc || _die "Unable to execute writable permission on files | ./var ./pub/static ./pub/media ./app/etc."
 
     if [[ -d './generated' ]]; then
         chmod -R 777 ./generated || _die "Unable to execute writable permission on files (./generated)."
@@ -833,7 +833,7 @@ function setFilesystemPermission()
 
     # @todo handle for multiple OS
     if ! _isOs 'darwin'; then
-        chown -R www-data:www-data ./
+        chown -R www-data:www-data ./ || _die "Couldn't change ownership of files."
     fi
 }
 
