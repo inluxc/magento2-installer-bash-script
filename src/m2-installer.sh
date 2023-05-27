@@ -649,7 +649,7 @@ function initUserInputWizard()
     _seekValue "Enter Magento Version" "${M2_VERSION}"
     M2_VERSION=${READVALUE}
 
-    _seekValue "Install Sample Data" "${INSTALL_SAMPLE_DATA}"
+    _seekValue "Install Sample Data" "${INSTALL_SAMPLE_DATAsudo
     INSTALL_SAMPLE_DATA=${READVALUE}
 
     _seekValue "Enter Base URL" "${BASE_URL}"
@@ -833,7 +833,7 @@ function setFilesystemPermission()
 
     # @todo handle for multiple OS
     if ! _isOs 'darwin'; then
-        sudo chown -R www-data:www-data ./ || _die "Couldn't change ownership of files."
+        chown -R www-data:www-data ./ || _die "Couldn't change ownership of files."
     fi
 }
 
