@@ -828,7 +828,7 @@ function setFilesystemPermission()
     chmod -R 777 ./var ./pub/static ./pub/media ./app/etc || _die "Unable to execute writable permission on files | ./var ./pub/static ./pub/media ./app/etc."
 
     if [[ -d './generated' ]]; then
-        chmod -R 777 ./generated || _die "Unable to execute writable permission on files (./generated)."
+        chmod -R 777 ./generated || _die "Unable to execute writable permission on files | ./generated."
     fi
 
     # @todo handle for multiple OS
